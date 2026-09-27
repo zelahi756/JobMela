@@ -3,123 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobMela.pk - آپ کا مستقبل، ہماری تلاش</title>
+<title>JobMela.pk - Full System</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&family=Inter:wght@700;800&display=swap" rel="stylesheet">
 <style>
 body{font-family:'Inter',sans-serif;background:#FFF7ED}
-.urdu{font-family:'Noto Nastaliq Urdu',serif; line-height:1.9}
-.card{transition:all.3s ease; border:1px solid #FFEDD5}
-.card:hover{transform:translateY(-6px); box-shadow:0 25px 50px -15px rgba(249,115,22,.25)}
-.gradient-header{background: linear-gradient(135deg, #FF6B00 0%, #EA580C 40%, #1E3A8A 100%);}
-.glass{background:rgba(255,255,255,0.85); backdrop-filter:blur(12px)}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:1.8}
+.filter-active{background:#0F172A!important;color:white!important;border-color:#0F172A!important}
+.card{transition:.25s;border:1px solid #FFEDD5}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -10px rgba(249,115,22,.2)}
 </style>
 </head>
 <body>
 
-<!-- Top Live -->
-<div class="bg-slate-900 text-white text-[11px] py-2 px-4">
-<div class="max-w-7xl mx-auto flex justify-between">
-<span id="liveDate">پشاور | لوڈ ہو رہا ہے...</span>
-<span class="hidden md:block">🔥 آج 6 نئی نوکریاں شامل کی گئیں</span>
-</div>
+<!-- Top Bar -->
+<div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex justify-between max-w-7xl mx-auto">
+<span id="liveDate">پشاور | لوڈ...</span>
+<span>🔥 10,000+ Users</span>
 </div>
 
-<!-- Header with Gradient -->
-<header class="gradient-header text-white sticky top-0 z-40 shadow-lg">
-<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-xl bg-white text-orange-600 flex items-center justify-center font-black text-xl">J</div>
+<!-- Header with Sign In -->
+<header class="bg-white/90 backdrop-blur-xl sticky top-0 z-40 border-b">
+<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-blue-700 text-white flex items-center justify-center font-black">J</div>
 <div>
-<h1 class="font-black text-xl leading-none">JobMela.pk</h1>
-<p class="urdu text-[13px] -mt-1 font-bold opacity-90">آپ کا مستقبل، ہماری تلاش</p>
+<h1 class="font-black leading-none">JobMela.pk</h1>
+<p class="urdu text-[11px] text-orange-600 font-bold -mt-1">آپ کا مستقبل، ہماری تلاش</p>
 </div>
 </div>
-<span class="bg-white text-orange-600 text-[11px] font-black px-4 py-1.5 rounded-full">● LIVE</span>
+<button onclick="openLogin()" class="flex items-center gap-2 border-2 px-4 py-2 rounded-full text-xs font-bold hover:bg-slate-900 hover:text-white transition">
+<span>👤</span> Sign In
+</button>
 </div>
 </header>
 
-<!-- Hero - Orange Style -->
-<section class="max-w-7xl mx-auto px-4 pt-6">
-<div class="bg-white rounded-[28px] p-7 md:p-10 border-2 border-orange-100 shadow-[0_20px_60px_-20px_rgba(249,115,22,0.2)]">
-<h2 class="text-[32px] md:text-[46px] font-black leading-[1.1] tracking-tight">نوکری ڈھونڈنا<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-700">ہوا اور بھی آسان!</span></h2>
-<p class="urdu text-[17px] text-slate-600 mt-3 max-w-2xl">پاکستان کی ہر تصدیق شدہ سرکاری نوکری، ٹینڈر اور ہوم ٹیوشن اب ایک ہی جگہ۔</p>
-<div class="mt-6 flex gap-2 bg-orange-50 p-2 rounded-2xl border border-orange-100 max-w-2xl">
-<input id="searchInput" oninput="filterJobs()" placeholder="مثلاً: کلرک، ٹیچر، پشاور..." class="flex-1 bg-white rounded-xl px-5 py-3.5 text-sm outline-none border-2 border-transparent focus:border-orange-400 text-right">
-<button class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 rounded-xl font-black text-sm shadow-lg shadow-orange-200">تلاش کریں</button>
+<!-- Filters Section - Yeh woh buttons hain jo aap keh rahe thay -->
+<section class="max-w-7xl mx-auto px-4 pt-4">
+<div class="bg-white rounded-[20px] p-4 border shadow-sm">
+<!-- Type Filters -->
+<div class="flex gap-2 overflow-x-auto pb-2">
+<button onclick="filterType('all')" id="btn-all" class="filter-active whitespace-nowrap border px-5 py-2.5 rounded-full text-xs font-bold">All Jobs (6)</button>
+<button onclick="filterType('gov')" id="btn-gov" class="whitespace-nowrap border bg-slate-50 px-5 py-2.5 rounded-full text-xs font-bold">🏛️ سرکاری (4)</button>
+<button onclick="filterType('private')" id="btn-private" class="whitespace-nowrap border bg-slate-50 px-5 py-2.5 rounded-full text-xs font-bold">🏢 پرائیویٹ (1)</button>
+<button onclick="filterType('tender')" id="btn-tender" class="whitespace-nowrap border bg-slate-50 px-5 py-2.5 rounded-full text-xs font-bold">📋 ٹینڈر (1)</button>
+</div>
+<!-- Location + Search -->
+<div class="flex flex-col md:flex-row gap-2 mt-3">
+<select id="locFilter" onchange="filterJobs()" class="bg-slate-100 rounded-xl px-4 py-3 text-sm font-bold outline-none">
+<option value="all">📍 تمام شہر</option>
+<option value="peshawar">پشاور</option>
+<option value="lahore">لاہور</option>
+<option value="islamabad">اسلام آباد</option>
+<option value="karachi">کراچی</option>
+</select>
+<input id="searchInput" oninput="filterJobs()" placeholder="تلاش کریں..." class="flex-1 bg-slate-100 rounded-xl px-4 py-3 text-sm outline-none text-right">
+<button onclick="filterJobs()" class="bg-slate-900 text-white px-8 rounded-xl font-bold text-sm">Search</button>
 </div>
 </div>
 </section>
 
 <!-- Jobs Grid -->
-<section class="max-w-7xl mx-auto px-4 py-6 pb-20">
-<div id="jobsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+<section class="max-w-7xl mx-auto px-4 py-5 pb-20">
+<div id="jobsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 </section>
 
-<!-- Modal -->
-<div id="modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-[24px] max-w-lg w-full p-7">
+<!-- Login Modal -->
+<div id="loginModal" class="fixed inset-0 bg-black/50 hidden z-[60] p-4 flex items-center justify-center">
+<div class="bg-white rounded-[24px] max-w-sm w-full p-7 text-center">
+<h3 class="font-black text-xl">خوش آمدید!</h3>
+<p class="urdu text-sm text-slate-500 mt-1">لاگ ان کر کے نوکریاں Save کریں</p>
+<button class="w-full mt-5 bg-white border-2 py-3 rounded-xl font-bold text-sm">🔵 Continue with Google</button>
+<button class="w-full mt-2 bg-slate-900 text-white py-3 rounded-xl font-bold text-sm">Continue as Guest</button>
+<button onclick="closeLogin()" class="mt-4 text-xs text-slate-400">بند کریں</button>
+</div>
+</div>
+
+<!-- Job Detail Modal -->
+<div id="modal" class="fixed inset-0 bg-black/60 hidden z-50 p-4 flex items-center justify-center">
+<div class="bg-white rounded-[24px] max-w-lg w-full p-6">
 <button onclick="closeModal()" class="float-left bg-slate-100 w-8 h-8 rounded-full">✕</button>
 <div id="modalContent" class="clear-both pt-2"></div>
 </div>
 </div>
 
 <script>
-function updateTime(){
-const n=new Date();
-const d=n.toLocaleDateString('ur-PK',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-const t=n.toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'});
-document.getElementById('liveDate').innerText=`پشاور | ${d} - ${t}`;
-}
-setInterval(updateTime,1000); updateTime();
-
+let currentType='all';
 const JOBS=[
-{id:1,titleEn:'Assistant Director (BPS-17)',titleUr:'اسسٹنٹ ڈائریکٹر',dept:'FPSC',deptUr:'وفاقی کمیشن',loc:'اسلام آباد',date:'15 اکتوبر',color:'from-blue-600 to-indigo-700',en:'Federal Govt job. Age 28 years.',ur:'وفاقی حکومت میں شاندار موقع، عمر 28 سال۔',link:'https://fpsc.gov.pk'},
-{id:2,titleEn:'Sub Inspector (BPS-14)',titleUr:'سب انسپکٹر',dept:'Punjab Police',deptUr:'پنجاب پولیس',loc:'لاہور',date:'12 اکتوبر',color:'from-slate-800 to-slate-900',en:'Height 5.7 inch required.',ur:'قد 5.7 انچ اور دوڑ لازمی۔',link:'#'},
-{id:3,titleEn:'Primary School Teacher',titleUr:'پرائمری ٹیچر',dept:'KPPSC',deptUr:'خیبر پختونخوا',loc:'پشاور',date:'18 اکتوبر',color:'from-emerald-500 to-teal-600',en:'1200+ vacancies through ETEA.',ur:'1200 آسامیوں کے لیے ETEA ٹیسٹ۔',link:'#'},
-{id:4,titleEn:'Clerk BPS-11',titleUr:'کلرک',dept:'Court',deptUr:'عدالت',loc:'راولپنڈی',date:'09 اکتوبر',color:'from-orange-500 to-red-600',en:'Typing 30 WPM must.',ur:'ٹائپنگ 30 الفاظ فی منٹ۔',link:'#'},
-{id:5,titleEn:'Home Tuition',titleUr:'ہوم ٹیوشن',dept:'Private',deptUr:'پرائیویٹ',loc:'یونیورسٹی ٹاؤن',date:'08 اکتوبر',color:'from-violet-500 to-purple-600',en:'Evening 4-6 PM, 15k salary.',ur:'شام 4 سے 6 بجے، 15 ہزار تنخواہ۔',link:'#'},
-{id:6,titleEn:'Construction Tender',titleUr:'تعمیراتی ٹینڈر',dept:'WAPDA',deptUr:'واپڈا',loc:'کراچی',date:'20 اکتوبر',color:'from-amber-500 to-orange-600',en:'For registered firms.',ur:'رجسٹرڈ کمپنیوں کے لیے۔',link:'#'}
+{id:1,title:'Assistant Director BPS-17',titleUr:'اسسٹنٹ ڈائریکٹر',dept:'FPSC',loc:'islamabad',city:'اسلام آباد',type:'gov',date:'15 اکتوبر',saved:false},
+{id:2,title:'Sub Inspector',titleUr:'سب انسپکٹر',dept:'Punjab Police',loc:'lahore',city:'لاہور',type:'gov',date:'12 اکتوبر',saved:false},
+{id:3,title:'Primary Teacher',titleUr:'پرائمری ٹیچر',dept:'KPPSC',loc:'peshawar',city:'پشاور',type:'gov',date:'18 اکتوبر',saved:false},
+{id:4,title:'Clerk BPS-11',titleUr:'کلرک',dept:'Court',loc:'peshawar',city:'پشاور',type:'gov',date:'09 اکتوبر',saved:false},
+{id:5,title:'Home Tuition',titleUr:'ہوم ٹیوشن',dept:'Private',loc:'peshawar',city:'یونیورسٹی ٹاؤن',type:'private',date:'08 اکتوبر',saved:false},
+{id:6,title:'WAPDA Tender',titleUr:'واپڈا ٹینڈر',dept:'WAPDA',loc:'karachi',city:'کراچی',type:'tender',date:'20 اکتوبر',saved:false},
 ];
 
 function render(list){
 document.getElementById('jobsGrid').innerHTML=list.map(j=>`
-<div class="card bg-white rounded-[22px] p-5">
-<div class="flex justify-between items-center">
-<span class="text-[10px] font-black px-3 py-1 rounded-full text-white bg-gradient-to-r ${j.color}">${j.dept}</span>
-<span class="text-[11px] bg-orange-50 text-orange-700 border border-orange-100 px-3 py-1 rounded-full font-bold">${j.date}</span>
+<div class="card bg-white rounded-[20px] p-4">
+<div class="flex justify-between">
+<span class="text-[10px] font-bold bg-slate-900 text-white px-3 py-1 rounded-full">${j.dept}</span>
+<span class="text-[10px] bg-orange-50 text-orange-700 px-3 py-1 rounded-full">${j.date}</span>
 </div>
-<h3 class="font-black text-[16px] mt-4 leading-tight">${j.titleEn}</h3>
-<p class="urdu text-[15px] font-bold text-orange-600 leading-tight">${j.titleUr} - ${j.deptUr}</p>
-<p class="text-[12px] text-slate-500 mt-2">📍 ${j.loc}</p>
-<div class="mt-3 bg-gradient-to-br from-slate-50 to-orange-50/50 rounded-xl p-3 border border-orange-50">
-<p class="text-[12px]">${j.en}</p>
-<p class="urdu text-[13px] text-slate-700 mt-1">${j.ur}</p>
-</div>
+<h3 class="font-bold mt-3 text-sm">${j.title}</h3>
+<p class="urdu text-[13px] font-bold text-slate-600">${j.titleUr} - ${j.city}</p>
 <div class="mt-4 flex gap-2">
-<button onclick="openJob(${j.id})" class="flex-1 bg-gradient-to-r ${j.color} text-white py-3 rounded-xl text-[13px] font-black shadow-md">تفصیل دیکھیں</button>
-<a href="${j.link}" target="_blank" class="px-5 py-3 rounded-xl border-2 font-bold text-[13px] hover:bg-slate-50">اپلائی</a>
+<button onclick="openJob(${j.id})" class="flex-1 bg-slate-900 text-white py-2.5 rounded-xl text-xs font-bold">تفصیل دیکھیں</button>
+<button onclick="toggleSave(${j.id})" class="w-10 h-10 border-2 rounded-xl flex items-center justify-center ${j.saved?'bg-red-50 border-red-200 text-red-500':'bg-white'}">${j.saved?'❤️':'♡'}</button>
+<button onclick="shareJob(${j.id})" class="w-10 h-10 border-2 rounded-xl">↗️</button>
 </div>
 </div>`).join('');
 }
-function openJob(id){
-const j=JOBS.find(x=>x.id===id);
-document.getElementById('modalContent').innerHTML=`
-<h2 class="font-black text-xl">${j.titleEn}</h2>
-<p class="urdu text-lg font-bold text-orange-600">${j.titleUr}</p>
-<p class="urdu mt-4 bg-orange-50 p-4 rounded-xl border border-orange-100">${j.ur}</p>
-<p class="text-sm mt-2 bg-slate-50 p-3 rounded-xl">${j.en}</p>
-<a href="${j.link}" target="_blank" class="mt-6 block text-center bg-gradient-to-r ${j.color} text-white font-black py-3.5 rounded-xl">اصل اشتہار پر اپلائی کریں</a>
-`;
-document.getElementById('modal').classList.remove('hidden');
+function filterType(t){
+currentType=t;
+document.querySelectorAll('[id^=btn-]').forEach(b=>b.classList.remove('filter-active'));
+document.getElementById('btn-'+t).classList.add('filter-active');
+filterJobs();
 }
-function closeModal(){document.getElementById('modal').classList.add('hidden')}
 function filterJobs(){
 const q=document.getElementById('searchInput').value.toLowerCase();
-const f=JOBS.filter(j=>(j.titleEn+j.titleUr+j.dept+j.loc).toLowerCase().includes(q));
+const loc=document.getElementById('locFilter').value;
+let f=JOBS.filter(j=>{
+let ok=true;
+if(currentType!=='all' && j.type!==currentType) ok=false;
+if(loc!=='all' && j.loc!==loc) ok=false;
+if(q &&! (j.title+j.titleUr+j.dept).toLowerCase().includes(q)) ok=false;
+return ok;
+});
 render(f);
 }
-render(JOBS);
+function toggleSave(id){ const j=JOBS.find(x=>x.id===id); j.saved=!j.saved; filterJobs(); }
+function shareJob(id){ alert('Link Copied: https://jobmela-bkb.pages.dev/?job='+id); }
+function openJob(id){ document.getElementById('modalContent').innerHTML=`<h2 class="font-black">${JOBS.find(x=>x.id===id).title}</h2><p class="urdu mt-2">مکمل تفصیل یہاں آئے گی۔</p><a href="#" class="mt-4 block bg-orange-500 text-white text-center py-3 rounded-xl font-bold">اپلائی کریں</a>`; document.getElementById('modal').classList.remove('hidden'); }
+function closeModal(){document.getElementById('modal').classList.add('hidden')}
+function openLogin(){document.getElementById('loginModal').classList.remove('hidden')}
+function closeLogin(){document.getElementById('loginModal').classList.add('hidden')}
+function updateTime(){ document.getElementById('liveDate').innerText=new Date().toLocaleDateString('ur-PK',{day:'2-digit',month:'short'})+' - پشاور'; }
+updateTime(); render(JOBS);
 </script>
 </body>
 </html>
