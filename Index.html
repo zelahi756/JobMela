@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobMela.pk - ہر کام کا میلہ</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@500;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #F8FAFC; }
+ .urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+ .card { transition: all 0.2s; }
+ .card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body class="text-slate-800">
 
+<!-- Header -->
+<header class="bg-white/80 backdrop-blur sticky top-0 z-50 border-b">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center text-white font-black text-xl">J</div>
+      <div>
+        <h1 class="font-black text-xl leading-none">JobMela.pk</h1>
+        <p class="urdu text-[13px] text-slate-500 leading-none mt-1">ہر کام کا میلہ</p>
+      </div>
+    </div>
+    <div class="hidden md:flex gap-2 text-sm font-semibold">
+      <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">● Live Updates</span>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="max-w-7xl mx-auto px-4 pt-10 pb-6">
+  <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-8 md:p-12 text-white relative overflow-hidden">
+    <div class="relative z-10 max-w-3xl">
+      <h2 class="text-4xl md:text-5xl font-black leading-tight">پاکستان کی ہر نوکری،<br><span class="text-orange-400">ایک ہی جگہ پر۔</span></h2>
+      <p class="urdu text-lg text-slate-300 mt-4 leading-relaxed">سرکاری نوکریاں، پرائیویٹ جابز، ٹینڈرز اور دیہاڑی کے کام - روزانہ اپڈیٹ۔ بغیر کسی فیس کے۔</p>
+
+      <div class="mt-8 bg-white rounded-2xl p-2 flex flex-col md:flex-row gap-2">
+        <input id="searchInput" type="text" placeholder="مثال: کلرک، ٹیچر، پشاور..." class="flex-1 px-4 py-3 text-slate-800 outline-none text-right">
+        <button onclick="filterJobs()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl">تلاش کریں</button>
+      </div>
+
+      <div class="flex gap-2 mt-4 flex-wrap">
+        <button onclick="setType('all')" class="type-btn bg-white text-slate-900 px-4 py-2 rounded-full text-sm font-bold" data-type="all">سب کچھ</button>
+        <button onclick="setType('job')" class="type-btn bg-white/10 px-4 py-2 rounded-full text-sm" data-type="job">سرکاری نوکریاں</button>
+        <button onclick="setType('tender')" class="type-btn bg-white/10 px-4 py-2 rounded-full text-sm" data-type="tender">ٹینڈرز</button>
+        <button onclick="setType('gig')" class="type-btn bg-white/10 px-4 py-2 rounded-full text-sm" data-type="gig">چھوٹے کام</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filters -->
+<section class="max-w-7xl mx-auto px-4 pb-4 flex gap-2 overflow-auto">
+  <select id="provinceFilter" onchange="filterJobs()" class="border bg-white rounded-full px-4 py-2 text-sm">
+    <option value="all">سارا پاکستان</option>
+    <option value="Punjab">پنجاب</option>
+    <option value="Sindh">سندھ</option>
+    <option value="KPK">خیبر پختونخوا</option>
+    <option value="Balochistan">بلوچستان</option>
+    <option value="Federal">وفاق</option>
+  </select>
+  <select id="eduFilter" onchange="filterJobs()" class="border bg-white rounded-full px-4 py-2 text-sm">
+    <option value="all">تمام تعلیم</option>
+    <option value="Primary">پرائمری</option>
+    <option value="Matric">میٹرک</option>
+    <option value="Intermediate">انٹرمیڈیٹ</option>
+    <option value="Graduation">گریجویشن</option>
+  </select>
+</section>
+
+<!-- Jobs Grid -->
+<section class="max-w-7xl mx-auto px-4 pb-20">
+  <div id="jobsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</section>
+
+<script>
+const JOBS = [
+  { id:1, type:'job', title:'Assistant Director (BPS-17)', dept:'FPSC - Federal Public Service Commission', province:'Federal', edu:'Graduation', lastDate:'2026-10-15', location:'Islamabad', link:'https://fpsc.gov.pk', isNew:true, badge:'سرکاری' },
+  { id:2, type:'job', title:'Sub Inspector', dept:'Punjab Police', province:'Punjab', edu:'Intermediate', lastDate:'2026-10-12', location:'Lahore', link:'#', isNew:true, badge:'پولیس' },
+  { id:3, type:'job', title:'Primary School Teacher', dept:'KP Education', province:'KPK', edu:'Intermediate', lastDate:'2026-10-18', location:'Peshawar', link:'#', isNew:false, badge:'تعلیم' },
+  { id:4, type:'tender', title:'School Building Construction Tender', dept:'WAPDA', province:'Sindh', edu:'all', lastDate:'2026-10-20', location:'Karachi', link:'#', badge:'ٹینڈر' },
+  { id:5, type:'gig', title:'Home Tuition - Math & Science', dept:'Private Family', province:'KPK', edu:'Graduation', lastDate:'2026-10-08', location:'Peshawar - University Town', budget:'Rs. 15,000', link:'#', badge:'پارٹ ٹائم' },
+  { id:6, type:'job', title:'Clerk (BPS-11)', dept:'District Court', province:'Punjab', edu:'Matric', lastDate:'2026-10-09', location:'Rawalpindi', link:'#', isNew:true, badge:'عدالت' }
+];
+
+let activeType = 'all';
+
+function setType(t){
+  activeType = t;
+  document.querySelectorAll('.type-btn').forEach(b=>{
+    b.className = b.dataset.type===t? 'type-btn bg-white text-slate-900 px-4 py-2 rounded-full text-sm font-bold' : 'type-btn bg-white/10 px-4 py-2 rounded-full text-sm';
+    if(document.body.contains(b) && b.closest('.bg-gradient-to-br')){ /* hero buttons */ }
+  });
+  // fix for hero buttons
+  document.querySelectorAll('.type-btn').forEach(b=>{
+    if(t==='all' && b.dataset.type==='all') b.className='type-btn bg-white text-slate-900 px-4 py-2 rounded-full text-sm font-bold';
+    else if(b.dataset.type===t) b.className='type-btn bg-white text-slate-900 px-4 py-2 rounded-full text-sm font-bold';
+    else b.className='type-btn bg-white/10 px-4 py-2 rounded-full text-sm';
+  });
+  filterJobs();
+}
+
+function filterJobs(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const prov = document.getElementById('provinceFilter').value;
+  const edu = document.getElementById('eduFilter').value;
+
+  const filtered = JOBS.filter(j=>{
+    if(activeType!=='all' && j.type!==activeType) return false;
+    if(prov!=='all' && j.province!==prov) return false;
+    if(edu!=='all' && j.edu!==edu && j.edu!=='all') return false;
+    if(q &&! (j.title.toLowerCase().includes(q) || j.dept.toLowerCase().includes(q) || j.location.toLowerCase().includes(q)) ) return false;
+    return true;
+  });
+  render(filtered);
+}
+
+function render(list){
+  const grid = document.getElementById('jobsGrid');
+  grid.innerHTML = list.map(j=>`
+    <div class="card bg-white rounded-[1.5rem] border p-5 flex flex-col">
+      <div class="flex justify-between items-start">
+        <span class="text-[11px] font-bold tracking-widest bg-slate-900 text-white px-2.5 py-1 rounded-full">${j.badge}</span>
+        ${j.isNew?'<span class="text-[11px] font-bold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">NEW</span>':''}
+      </div>
+      <h3 class="font-bold text-[17px] mt-3 leading-snug">${j.title}</h3>
+      <p class="text-[13px] text-slate-500 mt-1">${j.dept} • ${j.location}</p>
+
+      <div class="flex gap-2 mt-4 text-[12px]">
+        <span class="bg-slate-100 px-2.5 py-1 rounded-full">آخری تاریخ: ${j.lastDate}</span>
+        ${j.budget?`<span class="bg-orange-50 text-orange-700 px-2.5 py-1 rounded-full">${j.budget}</span>`:''}
+      </div>
+
+      <div class="mt-5 flex gap-2">
+        <a href="${j.link}" target="_blank" class="flex-1 bg-slate-900 text-white text-center text-sm font-bold py-2.5 rounded-xl">اپلائی کریں</a>
+        <button class="border px-4 py-2.5 rounded-xl text-sm">تفصیل</button>
+      </div>
+    </div>
+  `).join('') || '<p class="col-span-3 text-center py-10 urdu text-slate-500">کوئی نتیجہ نہیں ملا، فلٹر تبدیل کریں۔</p>';
+}
+
+render(JOBS);
+</script>
+</body>
+</html>
