@@ -3,151 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobMela.pk - آپ کا مستقبل، ہماری تلاش</title>
+<title>JobMela.pk - Pakistan's Most Trusted Job Portal</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
 body{font-family:'Inter',sans-serif;background:#F1F5F9}
-.urdu{font-family:'Noto Nastaliq Urdu',serif; line-height:1.8}
-.card{transition: all.3s ease; border: 1px solid #E2E8F0}
-.card:hover{transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(15,23,42,0.15); border-color:#CBD5E1}
-.badge-dot{width:6px;height:6px;border-radius:999px;display:inline-block;margin-left:6px}
+.urdu{font-family:'Noto Nastaliq Urdu',serif; line-height:1.9}
+.card{transition: all.25s ease; border:1px solid #E2E8F0}
+.card:hover{transform: translateY(-4px); box-shadow:0 20px 40px -12px rgba(0,0,0,.15)}
 </style>
 </head>
 <body class="text-slate-800">
 
 <!-- Top Bar -->
-<div class="bg-slate-900 text-white text-[12px] py-2 px-4">
-<div class="max-w-7xl mx-auto flex justify-between items-center">
-<span id="liveDate">Peshawar | Loading...</span>
-<span class="opacity-70">Trusted by 10,000+ Job Seekers</span>
-</div>
+<div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex justify-between max-w-7xl mx-auto">
+<span id="liveDate"></span>
+<span class="opacity-70">Trusted by 10,000+ Job Seekers in Pakistan</span>
 </div>
 
-<!-- Header Pro -->
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200">
-<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-white font-black text-xl">J</div>
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b">
+<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-black">J</div>
 <div>
-<h1 class="font-black text-xl tracking-tight">JobMela.pk</h1>
-<p class="urdu text-[13px] text-slate-500 font-bold -mt-1">آپ کا مستقبل، ہماری تلاش</p>
+<h1 class="font-black text-lg leading-none">JobMela.pk</h1>
+<p class="urdu text-[11px] text-slate-500 -mt-1">آپ کا مستقبل، ہماری تلاش</p>
 </div>
 </div>
-<div class="hidden md:flex gap-2 text-[12px] font-bold">
-<span class="bg-slate-100 px-3 py-1.5 rounded-full">FPSC</span>
-<span class="bg-slate-100 px-3 py-1.5 rounded-full">PPSC</span>
-<span class="bg-slate-100 px-3 py-1.5 rounded-full">KPPSC</span>
-<span class="bg-green-100 text-green-700 px-3 py-1.5 rounded-full">● Live</span>
+<div class="flex gap-2">
+<span class="text-[10px] font-bold bg-slate-100 px-2.5 py-1 rounded-full">FPSC</span>
+<span class="text-[10px] font-bold bg-slate-100 px-2.5 py-1 rounded-full">PPSC</span>
+<span class="text-[10px] font-bold bg-green-100 text-green-700 px-2.5 py-1 rounded-full">● Live</span>
 </div>
 </div>
 </header>
 
-<!-- Hero Pro -->
-<section class="max-w-7xl mx-auto px-4 pt-8">
-<div class="bg-white rounded-[24px] border p-8 md:p-10">
-<div class="flex flex-col md:flex-row justify-between gap-6">
-<div>
-<h2 class="text-[32px] md:text-[42px] font-black tracking-tight leading-[1.1]">Find Your Dream Job,<br><span class="text-slate-400">Pakistan's Most Trusted Portal.</span></h2>
-<p class="urdu text-[17px] text-slate-600 mt-3">پاکستان کی ہر تصدیق شدہ سرکاری اور پرائیویٹ نوکری اب ایک ہی جگہ پر۔</p>
-</div>
-<div class="flex items-end">
-<div class="bg-slate-900 text-white rounded-2xl px-6 py-4 text-center">
-<div class="text-2xl font-black">1,240+</div>
-<div class="text-[11px] opacity-70 uppercase tracking-widest">Active Jobs</div>
+<!-- Hero - Same as your screenshot but polished -->
+<section class="max-w-7xl mx-auto px-4 pt-5">
+<div class="bg-white rounded-[22px] border p-6 md:p-8 flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
+<div class="flex-1">
+<h2 class="text-[28px] md:text-[36px] font-black leading-[1.05]">Find Your Dream Job,<br><span class="text-slate-400 font-extrabold">Pakistan's Most Trusted Portal.</span></h2>
+<p class="urdu text-[15px] text-slate-600 mt-2">پاکستان کی ہر تصدیق شدہ سرکاری اور پرائیویٹ نوکری اب ایک ہی جگہ پر۔</p>
+<div class="mt-4 flex gap-2 bg-slate-100 p-1.5 rounded-xl max-w-xl">
+<input id="searchInput" oninput="filterJobs()" placeholder="Search by Title, Department, City..." class="flex-1 bg-white rounded-lg px-4 py-2.5 text-sm outline-none border focus:border-blue-500">
+<button onclick="filterJobs()" class="bg-slate-900 text-white px-6 rounded-lg text-sm font-bold">Search</button>
 </div>
 </div>
-</div>
-<!-- Search -->
-<div class="mt-8 flex gap-2 bg-slate-100 p-2 rounded-2xl">
-<input id="searchInput" oninput="filterJobs()" type="text" placeholder="Search by Title, Department, City..." class="flex-1 bg-white rounded-xl px-5 py-3 outline-none text-sm border">
-<button class="bg-slate-900 text-white px-8 rounded-xl font-bold text-sm">Search</button>
+<div class="bg-slate-900 text-white rounded-2xl px-6 py-4 text-center min-w-[110px]">
+<div id="jobCount" class="text-2xl font-black">6</div>
+<div class="text-[10px] opacity-60 tracking-widest">ACTIVE JOBS</div>
 </div>
 </div>
 </section>
 
-<!-- Jobs Grid - Professional -->
-<section class="max-w-7xl mx-auto px-4 py-6 pb-20">
+<!-- Jobs Grid -->
+<section class="max-w-7xl mx-auto px-4 py-5 pb-20">
 <div id="jobsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 </section>
 
+<footer class="border-t bg-white py-8 text-center text-xs text-slate-500">
+<div class="max-w-7xl mx-auto px-4">
+<p>© 2026 JobMela.pk - آپ کا مستقبل، ہماری تلاش | <a href="#" class="underline">Privacy Policy</a> | <a href="#" class="underline">About Us</a> | <a href="#" class="underline">Contact</a></p>
+<p class="mt-2">All jobs sourced from official websites. We do not charge any fee.</p>
+</div>
+</footer>
+
 <!-- Modal -->
 <div id="modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-[24px] max-w-xl w-full p-7">
+<div class="bg-white rounded-[20px] max-w-lg w-full p-6">
 <button onclick="closeModal()" class="float-right bg-slate-100 w-8 h-8 rounded-full">✕</button>
-<div id="modalContent" class="clear-both pt-4"></div>
+<div id="modalContent" class="clear-both pt-2"></div>
 </div>
 </div>
 
 <script>
 function updateTime(){
-const now=new Date();
-document.getElementById('liveDate').innerText = now.toLocaleDateString('en-PK',{weekday:'long', year:'numeric', month:'long', day:'numeric'}) + ' | ' + now.toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'}) + ' - Peshawar';
-}
-setInterval(updateTime,1000); updateTime();
+ const n=new Date();
+ document.getElementById('liveDate').innerText=n.toLocaleDateString('en-PK',{weekday:'short',day:'2-digit',month:'short',year:'numeric'})+' | '+n.toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'})+' - Peshawar';
+} setInterval(updateTime,1000); updateTime();
 
 const JOBS=[
-{ id:1, titleEn:'Assistant Director (BPS-17)', titleUr:'اسسٹنٹ ڈائریکٹر - گریڈ 17', deptEn:'Federal Public Service Commission', deptUr:'وفاقی پبلک سروس کمیشن', loc:'Islamabad, Federal', date:'15 Oct 2026', edu:'Graduation / Master', type:'gov', link:'https://fpsc.gov.pk', descEn:'Excellent opportunity in Federal Government. Age limit 28 years. All Pakistan can apply.', descUr:'وفاقی حکومت میں شاندار موقع۔ عمر کی حد 28 سال، پورے پاکستان سے اپلائی کر سکتے ہیں۔', color:'bg-blue-600' },
-{ id:2, titleEn:'Sub Inspector (BPS-14)', titleUr:'سب انسپکٹر - گریڈ 14', deptEn:'Punjab Police Department', deptUr:'محکمہ پولیس پنجاب', loc:'Lahore, Punjab', date:'12 Oct 2026', edu:'Intermediate / BA', type:'gov', link:'https://punjabpolice.gov.pk', descEn:'Punjab Police recruitment. Height 5.7 inch, Running test required.', descUr:'پنجاب پولیس میں بھرتی۔ قد 5 فٹ 7 انچ اور دوڑ کا ٹیسٹ لازمی ہے۔', color:'bg-slate-900' },
-{ id:3, titleEn:'Primary School Teacher (BPS-14)', titleUr:'پرائمری سکول ٹیچر', deptEn:'KP Elementary Education', deptUr:'محکمہ تعلیم خیبر پختونخوا', loc:'Peshawar, KPK', date:'18 Oct 2026', edu:'BA / BSc', type:'gov', link:'https://etea.edu.pk', descEn:'1200+ vacancies for PST. Test will be conducted through ETEA.', descUr:'1200 سے زائد آسامیاں، ٹیسٹ ETEA کے ذریعے لیا جائے گا۔', color:'bg-emerald-600' },
-{ id:4, titleEn:'Clerk (BPS-11) - District Court', titleUr:'کلرک - ڈسٹرکٹ کورٹ', deptEn:'District & Session Court', deptUr:'ڈسٹرکٹ اینڈ سیشن کورٹ', loc:'Rawalpindi, Punjab', date:'09 Oct 2026', edu:'Matric / Intermediate', type:'gov', link:'#', descEn:'Typing speed 30 WPM required. Computer knowledge must.', descUr:'ٹائپنگ سپیڈ 30 الفاظ فی منٹ اور کمپیوٹر کا علم لازمی۔', color:'bg-orange-600' },
-{ id:5, titleEn:'Home Tuition - Math & Science', titleUr:'ہوم ٹیوشن - ریاضی اور سائنس', deptEn:'Private Family - University Town', deptUr:'پرائیویٹ فیملی - یونیورسٹی ٹاؤن پشاور', loc:'Peshawar', date:'08 Oct 2026', edu:'Graduation', type:'gig', budget:'Rs. 15,000 / Month', link:'#', descEn:'Evening tuition from 4 PM to 6 PM. Good salary package.', descUr:'شام 4 سے 6 بجے تک ٹیوشن، اچھی تنخواہ۔', color:'bg-violet-600' },
-{ id:6, titleEn:'School Building Construction Tender', titleUr:'سکول بلڈنگ تعمیراتی ٹینڈر', deptEn:'WAPDA - Works Department', deptUr:'واپڈا - ورکس ڈیپارٹمنٹ', loc:'Karachi, Sindh', date:'20 Oct 2026', edu:'Registered Firms', type:'tender', link:'#', descEn:'For experienced construction companies. Last date for submission 20 Oct.', descUr:'تجربہ کار تعمیراتی کمپنیوں کے لیے۔', color:'bg-amber-600' }
+{id:1,titleEn:'Assistant Director (BPS-17)',titleUr:'اسسٹنٹ ڈائریکٹر - گریڈ 17',dept:'FEDERAL PUBLIC SERVICE COMMISSION',deptUr:'وفاقی پبلک سروس کمیشن',loc:'Islamabad, Federal',date:'15 Oct 2026',edu:'Graduation / Master',color:'bg-blue-600',link:'https://fpsc.gov.pk',en:'Excellent opportunity in Federal Government. Age limit 28 years.',ur:'وفاقی حکومت میں شاندار موقع۔ عمر کی حد 28 سال سے پورے پاکستان سے اپلائی کر سکتے ہیں۔'},
+{id:2,titleEn:'Sub Inspector (BPS-14)',titleUr:'سب انسپکٹر - گریڈ 14',dept:'PUNJAB POLICE DEPARTMENT',deptUr:'پنجاب پولیس ڈیپارٹمنٹ',loc:'Lahore, Punjab',date:'12 Oct 2026',edu:'Intermediate / BA',color:'bg-slate-800',link:'https://punjabpolice.gov.pk',en:'Punjab Police recruitment. Height 5.7 inch, Running test required.',ur:'پنجاب پولیس میں بھرتی۔ قد 5 فٹ 7 انچ اور دوڑ کا ٹیسٹ لازمی ہے۔'},
+{id:3,titleEn:'Primary School Teacher (BPS-14)',titleUr:'پرائمری سکول ٹیچر',dept:'KP ELEMENTARY EDUCATION',deptUr:'محکمہ تعلیم خیبر پختونخوا',loc:'Peshawar, KPK',date:'18 Oct 2026',edu:'BA / BSc',color:'bg-emerald-600',link:'https://etea.edu.pk',en:'1200+ vacancies for PST. Test will be conducted through ETEA.',ur:'1200 آسامیوں کے لیے ETEA کے ذریعے ٹیسٹ لیا جائے گا۔'},
+{id:4,titleEn:'Clerk (BPS-11) - District Court',titleUr:'کلرک - ڈسٹرکٹ کورٹ',dept:'DISTRICT & SESSION COURT',deptUr:'ڈسٹرکٹ اینڈ سیشن کورٹ',loc:'Rawalpindi, Punjab',date:'09 Oct 2026',edu:'Matric / Intermediate',color:'bg-orange-600',link:'#',en:'Typing speed 30 WPM required. Computer knowledge must.',ur:'ٹائپنگ سپیڈ 30 الفاظ فی منٹ اور کمپیوٹر کا علم لازمی۔'},
+{id:5,titleEn:'Home Tuition - Math & Science',titleUr:'ہوم ٹیوشن - ریاضی اور سائنس',dept:'PRIVATE FAMILY - UNIVERSITY TOWN',deptUr:'پرائیویٹ فیملی - یونیورسٹی ٹاؤن',loc:'Peshawar',date:'08 Oct 2026',edu:'Graduation',color:'bg-violet-600',link:'#',en:'Evening tuition from 4 PM to 6 PM. Good salary package.',ur:'شام 4 سے 6 بجے تک ٹیوشن، اچھی تنخواہ۔'},
+{id:6,titleEn:'School Building Construction Tender',titleUr:'سکول بلڈنگ ٹینڈر',dept:'WAPDA - WORKS DEPARTMENT',deptUr:'واپڈا - ورکس ڈیپارٹمنٹ',loc:'Karachi, Sindh',date:'20 Oct 2026',edu:'Registered Firms',color:'bg-amber-600',link:'#',en:'For experienced construction companies.',ur:'تجربہ کار تعمیراتی کمپنیوں کے لیے۔'}
 ];
 
 function render(list){
-document.getElementById('jobsGrid').innerHTML = list.map(j=>`
-<div class="card bg-white rounded-[20px] p-5 flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start gap-2">
-<span class="text-[10px] font-black tracking-widest px-2.5 py-1 rounded-full text-white ${j.color}">${j.deptEn.toUpperCase()}</span>
-<span class="text-[11px] bg-slate-100 px-2.5 py-1 rounded-full font-bold">${j.date}</span>
-</div>
-
-<h3 class="font-extrabold text-[15px] mt-4 leading-tight">${j.titleEn}</h3>
-<p class="urdu text-[15px] font-bold text-slate-600 mt-1 leading-tight">${j.titleUr}</p>
-
-<p class="text-[12px] text-slate-500 mt-2 flex items-center gap-1">📍 ${j.loc} • 🎓 ${j.edu}</p>
-
-<div class="mt-3 bg-slate-50 rounded-xl p-3">
-<p class="text-[12px] text-slate-600 leading-snug">${j.descEn}</p>
-<p class="urdu text-[13px] text-slate-700 mt-1 leading-snug">${j.descUr}</p>
-</div>
-</div>
-
-<div class="mt-4 flex gap-2">
-<button onclick="openJob(${j.id})" class="flex-1 bg-slate-900 hover:bg-black text-white py-2.5 rounded-xl text-[13px] font-bold transition">View Details</button>
-<a href="${j.link}" target="_blank" class="px-5 py-2.5 rounded-xl border font-bold text-[13px] hover:bg-slate-50">Apply</a>
-</div>
-</div>
-`).join('');
+ document.getElementById('jobCount').innerText=list.length+'+';
+ document.getElementById('jobsGrid').innerHTML=list.map(j=>`
+ <div class="card bg-white rounded-[18px] p-4">
+ <div class="flex justify-between items-center">
+ <span class="text-[9px] font-black tracking-widest px-2.5 py-1 rounded-full text-white ${j.color}">${j.dept}</span>
+ <span class="text-[10px] bg-slate-100 px-2 py-1 rounded-full">${j.date}</span>
+ </div>
+ <h3 class="font-bold text-[14px] mt-3 leading-tight">${j.titleEn}</h3>
+ <p class="urdu text-[13px] font-bold text-slate-600 mt-1 leading-tight">${j.titleUr}</p>
+ <p class="text-[11px] text-slate-500 mt-2">📍 ${j.loc} • 🎓 ${j.edu}</p>
+ <div class="mt-3 bg-slate-50 rounded-xl p-3">
+ <p class="text-[11px] leading-snug">${j.en}</p>
+ <p class="urdu text-[12px] leading-snug mt-1 text-slate-700">${j.ur}</p>
+ </div>
+ <div class="mt-3 flex gap-2">
+ <button onclick="openJob(${j.id})" class="flex-1 bg-slate-900 text-white py-2.5 rounded-xl text-xs font-bold">View Details</button>
+ <a href="${j.link}" target="_blank" class="px-4 py-2.5 rounded-xl border text-xs font-bold">Apply</a>
+ </div>
+ </div>`).join('');
 }
-
 function openJob(id){
-const j=JOBS.find(x=>x.id===id);
-document.getElementById('modalContent').innerHTML=`
-<span class="text-[10px] font-black tracking-widest px-3 py-1 rounded-full text-white ${j.color}">${j.type.toUpperCase()}</span>
-<h2 class="font-black text-xl mt-3 leading-tight">${j.titleEn}</h2>
-<p class="urdu text-lg font-bold text-blue-600 mt-1">${j.titleUr}</p>
-<div class="grid grid-cols-2 gap-2 mt-5 text-xs">
-<div class="bg-slate-50 p-3 rounded-xl"><span class="text-slate-400 block">Department</span><b>${j.deptEn}</b><b class="urdu block font-bold">${j.deptUr}</b></div>
-<div class="bg-slate-50 p-3 rounded-xl"><span class="text-slate-400 block">Location</span><b>${j.loc}</b></div>
-<div class="bg-slate-50 p-3 rounded-xl"><span class="text-slate-400 block">Education</span><b>${j.edu}</b></div>
-<div class="bg-slate-50 p-3 rounded-xl"><span class="text-slate-400 block">Last Date</span><b>${j.date}</b></div>
-</div>
-<div class="mt-5 bg-blue-50 border border-blue-100 rounded-xl p-4">
-<p class="text-sm">${j.descEn}</p>
-<p class="urdu text-[14px] mt-2">${j.descUr}</p>
-</div>
-<a href="${j.link}" target="_blank" class="mt-6 block text-center bg-slate-900 text-white font-bold py-3.5 rounded-xl">Apply on Official Website</a>
-`;
-document.getElementById('modal').classList.remove('hidden');
+ const j=JOBS.find(x=>x.id===id);
+ document.getElementById('modalContent').innerHTML=`<h2 class="font-black">${j.titleEn}</h2><p class="urdu font-bold text-blue-600">${j.titleUr}</p><p class="text-sm mt-3 bg-slate-50 p-3 rounded-xl">${j.en}</p><p class="urdu text-sm mt-2 bg-blue-50 p-3 rounded-xl">${j.ur}</p><a href="${j.link}" target="_blank" class="mt-4 block bg-slate-900 text-white text-center py-3 rounded-xl font-bold">Apply on Official Website</a>`;
+ document.getElementById('modal').classList.remove('hidden');
 }
 function closeModal(){document.getElementById('modal').classList.add('hidden')}
 function filterJobs(){
-const q=document.getElementById('searchInput').value.toLowerCase();
-const f=JOBS.filter(j=> (j.titleEn+j.titleUr+j.deptEn+j.loc).toLowerCase().includes(q));
-render(f);
+ const q=document.getElementById('searchInput').value.toLowerCase();
+ const f=JOBS.filter(j=>(j.titleEn+j.titleUr+j.dept+j.loc).toLowerCase().includes(q));
+ render(f);
 }
 render(JOBS);
 </script>
