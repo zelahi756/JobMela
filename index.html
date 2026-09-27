@@ -3,96 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JobMela.pk - آپ کا مستقبل، ہماری تلاش</title>
+<title>JobHub - جاب ہب پاکستان</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600;700&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Inter',sans-serif;background:#FFF7ED}
-.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:1.9}
-.card{transition:.3s; border:1px solid #FFEDD5}
-.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -10px rgba(249,115,22,.3)}
+body{font-family:'Inter','Noto Nastaliq Urdu',sans-serif; background: #FF6A00; background: linear-gradient(135deg, #FF7A18 0%, #FF6A00 20%, #3B5BFE 85%, #5B4DF0 100%); min-height:100vh}
+.urdu{font-family:'Noto Nastaliq Urdu',serif}
+.glass-card{background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.5); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15)}
+.filter-pill{transition: all.2s}
+.filter-active{background: linear-gradient(135deg,#3B82F6,#1D4ED8)!important; color:white!important; border-color: transparent!important; box-shadow: 0 4px 15px rgba(59,130,246,0.4)}
+.job-card{transition: all.25s}
+.job-card:hover{transform: translateY(-4px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2)}
+.salary-gradient{background: linear-gradient(90deg, #FF6A00 0%, #3B5BFE 100%)}
 </style>
 </head>
-<body>
+<body class="p-0 md:p-4">
 
-<div class="bg-slate-900 text-white text-[11px] py-2 px-4 flex justify-between max-w-7xl mx-auto">
-<span id="liveDate">پشاور | لوڈ ہو رہا ہے...</span>
-<span>🔥 آج 6 نئی نوکریاں</span>
-</div>
+<!-- MAIN CONTAINER LIKE IMAGE -->
+<div class="max-w-[1150px] mx-auto bg-gradient-to-br from-orange-100/90 via-white/90 to-blue-100/90 rounded-none md:rounded-[28px] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden border border-white/50">
 
-<header class="bg-gradient-to-r from-orange-500 to-blue-800 text-white sticky top-0 z-40">
-<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-<div class="flex items-center gap-3">
-<div class="w-11 h-11 rounded-xl bg-white text-orange-600 flex items-center justify-center font-black text-xl">J</div>
+<!-- HEADER -->
+<header class="bg-gradient-to-r from-orange-500 via-orange-500 to-blue-600 px-4 md:px-6 py-3.5 flex justify-between items-center text-white">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center text-orange-600 font-black text-lg">💼</div>
 <div>
-<h1 class="font-black text-xl leading-none">JobMela.pk</h1>
-<p class="urdu text-[13px] font-bold opacity-90 -mt-1">آپ کا مستقبل، ہماری تلاش</p>
+<h1 class="font-black text-[18px] leading-none">JobHub</h1>
+<p class="urdu text-[11px] leading-none opacity-90">جاب ہب پاکستان</p>
 </div>
+</div>
+<nav class="hidden md:flex gap-5 text-[12px] font-bold opacity-95">
+<span>ہوم<br><span class="text-[10px] opacity-70">Home</span></span>
+<span>نوکریاں<br><span class="text-[10px] opacity-70">Jobs</span></span>
+<span>سرکاری<br><span class="text-[10px] opacity-70">Govt Jobs</span></span>
+<span>کیٹیگریز<br><span class="text-[10px] opacity-70">Categories</span></span>
+<span>مدد<br><span class="text-[10px] opacity-70">Help</span></span>
+</nav>
 </div>
 <div class="flex items-center gap-2">
-<span class="bg-white text-orange-600 text-[11px] font-black px-4 py-1.5 rounded-full">● LIVE</span>
-<button onclick="alert('Login جلد آ رہا ہے')" class="border border-white/30 px-4 py-1.5 rounded-full text-xs font-bold">👤 Sign In</button>
-</div>
+<div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">🔔</div>
+<div class="bg-white text-slate-800 px-3 py-1.5 rounded-full flex items-center gap-2 text-xs font-bold"><span class="w-6 h-6 bg-slate-200 rounded-full flex items-center justify-center">👤</span> علی احمد ▼</div>
 </div>
 </header>
 
-<section class="max-w-7xl mx-auto px-4 pt-6">
-<div class="bg-white rounded-[28px] p-7 md:p-10 border-2 border-orange-100 shadow-xl">
-<h2 class="text-[34px] md:text-[48px] font-black leading-[1.05]">نوکری ڈھونڈنا<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-blue-700">ہوا اور بھی آسان!</span></h2>
-<p class="urdu text-[17px] text-slate-600 mt-3">پاکستان کی ہر تصدیق شدہ سرکاری نوکری اب ایک ہی جگہ۔</p>
-<div class="mt-6 flex gap-2 bg-orange-50 p-2 rounded-2xl border max-w-2xl">
-<input id="searchInput" oninput="filterJobs()" placeholder="مثلاً: کلرک، ٹیچر، پشاور..." class="flex-1 bg-white rounded-xl px-5 py-3.5 text-sm outline-none border-2 border-transparent focus:border-orange-400 text-right">
-<button onclick="filterJobs()" class="bg-orange-500 text-white px-8 rounded-xl font-black text-sm">تلاش</button>
-</div>
-<div class="flex gap-2 mt-4 overflow-x-auto">
-<button onclick="filterType('all')" id="b-all" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold">سب نوکریاں</button>
-<button onclick="filterType('gov')" id="b-gov" class="bg-slate-100 px-5 py-2 rounded-full text-xs font-bold">سرکاری</button>
-<button onclick="filterType('private')" id="b-private" class="bg-slate-100 px-5 py-2 rounded-full text-xs font-bold">پرائیویٹ</button>
-<button onclick="filterType('tender')" id="b-tender" class="bg-slate-100 px-5 py-2 rounded-full text-xs font-bold">ٹینڈر</button>
-</div>
-</div>
-</section>
-
-<section class="max-w-7xl mx-auto px-4 py-6 pb-20">
-<div id="jobsGrid" class="grid md:grid-cols-3 gap-5"></div>
-</section>
-
-<div id="modal" class="fixed inset-0 bg-black/60 hidden z-50 p-4 flex items-center justify-center">
-<div class="bg-white rounded-[24px] max-w-lg w-full p-7">
-<button onclick="closeModal()" class="float-left bg-slate-100 w-8 h-8 rounded-full">✕</button>
-<div id="modalContent" class="clear-both pt-2"></div>
-</div>
-</div>
-
-<script>
-let cur='all';
-const JOBS=[
-{id:1,titleEn:'Assistant Director BPS-17',titleUr:'اسسٹنٹ ڈائریکٹر',dept:'FPSC',city:'اسلام آباد',type:'gov',date:'15 اکتوبر',c:'from-blue-600 to-indigo-700',en:'Federal Govt job.',ur:'وفاقی حکومت میں شاندار موقع۔',link:'https://fpsc.gov.pk'},
-{id:2,titleEn:'Sub Inspector BPS-14',titleUr:'سب انسپکٹر',dept:'Punjab Police',city:'لاہور',type:'gov',date:'12 اکتوبر',c:'from-slate-800 to-slate-900',en:'Police job.',ur:'پولیس میں بھرتی۔',link:'#'},
-{id:3,titleEn:'Primary Teacher',titleUr:'پرائمری ٹیچر',dept:'KPPSC',city:'پشاور',type:'gov',date:'18 اکتوبر',c:'from-emerald-500 to-teal-600',en:'1200+ vacancies.',ur:'1200 آسامیاں۔',link:'#'},
-{id:4,titleEn:'Clerk BPS-11',titleUr:'کلرک',dept:'Court',city:'راولپنڈی',type:'gov',date:'09 اکتوبر',c:'from-orange-500 to-red-600',en:'Typing 30 WPM.',ur:'ٹائپنگ لازمی۔',link:'#'},
-{id:5,titleEn:'Home Tuition',titleUr:'ہوم ٹیوشن',dept:'Private',city:'پشاور',type:'private',date:'08 اکتوبر',c:'from-violet-500 to-purple-600',en:'15k salary.',ur:'15 ہزار تنخواہ۔',link:'#'},
-{id:6,titleEn:'WAPDA Tender',titleUr:'واپڈا ٹینڈر',dept:'WAPDA',city:'کراچی',type:'tender',date:'20 اکتوبر',c:'from-amber-500 to-orange-600',en:'For firms.',ur:'کمپنیوں کے لیے۔',link:'#'}
-];
-function render(list){
-document.getElementById('jobsGrid').innerHTML=list.map(j=>`
-<div class="card bg-white rounded-[22px] p-5">
-<div class="flex justify-between"><span class="text-[10px] font-black px-3 py-1 rounded-full text-white bg-gradient-to-r ${j.c}">${j.dept}</span><span class="text-[11px] bg-orange-50 text-orange-700 px-3 py-1 rounded-full font-bold">${j.date}</span></div>
-<h3 class="font-black mt-4">${j.titleEn}</h3>
-<p class="urdu font-bold text-orange-600 text-[14px]">${j.titleUr} - ${j.city}</p>
-<p class="text-[12px] text-slate-500 mt-2">${j.ur}</p>
-<div class="mt-4 flex gap-2">
-<button onclick="openJob(${j.id})" class="flex-1 bg-gradient-to-r ${j.c} text-white py-3 rounded-xl text-xs font-black">تفصیل دیکھیں</button>
-<a href="${j.link}" target="_blank" class="px-5 py-3 rounded-xl border-2 font-bold text-xs">اپلائی</a>
-</div>
-</div>`).join('');
-}
-function filterType(t){cur=t; document.querySelectorAll('[id^=b-]').forEach(b=>b.className='bg-slate-100 px-5 py-2 rounded-full text-xs font-bold'); document.getElementById('b-'+t).className='bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold'; filterJobs();}
-function filterJobs(){const q=document.getElementById('searchInput').value.toLowerCase(); let f=JOBS.filter(j=> (cur==='all'||j.type===cur) && (j.titleEn+j.titleUr+j.city).toLowerCase().includes(q)); render(f);}
-function openJob(id){const j=JOBS.find(x=>x.id===id); document.getElementById('modalContent').innerHTML=`<h2 class="font-black text-xl">${j.titleEn}</h2><p class="urdu font-bold text-orange-600">${j.titleUr}</p><p class="urdu mt-3 bg-orange-50 p-3 rounded-xl">${j.ur}</p><a href="${j.link}" target="_blank" class="mt-4 block bg-slate-900 text-white text-center py-3 rounded-xl font-bold">اپلائی کریں</a>`; document.getElementById('modal').classList.remove('hidden');}
-function closeModal(){document.getElementById('modal').classList.add('hidden')}
-function updateTime(){document.getElementById('liveDate').innerText=new Date().toLocaleDateString('ur-PK',{day:'2-digit',month:'long'})+' - پشاور | '+new Date().toLocaleTimeString('en-PK',{hour:'2-digit',minute:'2-digit'});}
-setInterval(updateTime,1000); updateTime(); render(JOBS);
-</script>
-</body>
-</html>
+<!-- HERO SEARCH SECTION -->
+<div class="mx-3 md:mx-6 mt-5 bg-gradient-to-r from-orange-500 to-blue-600 rounded-[18px] p-5 md:p-6 text-white relative overflow-hidden">
+<h2 class="urdu text-[26px] md:text-[32px] font-black leading-tight">سرکاری نوکریاں تلاش کریں</h2>
+<p class="text-[12px] md:text-[13px] mt-1 opacity-90">+1,243 سرکاری نوکریاں دستیاب • آج 86 نئی نوکریاں شامل کی گئیں</p>
+<div class="mt-
